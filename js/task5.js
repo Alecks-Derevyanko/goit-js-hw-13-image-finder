@@ -1,36 +1,16 @@
-let country = prompt('Укажите страну');
+const checkForSpam = function (message) {
+    
+    const checkFor = message.toLowerCase();
+    
+    let result = checkFor.includes('sale') || checkFor.includes('spam')
 
-let price = 0;
-let result = ('В вашей стране доставка не доступна');
+    return result;
+};
 
-switch( country.toLowerCase ) {
-        
-    case 'china':    
-    price = 100
-    result = (`Доставка в ${country} будет стоить ${price} кредитов`);
-    break;
+console.log(checkForSpam('Latest technology news')); // false
 
-    case 'chile':
-    price = 250
-    result = (`Доставка в ${country} будет стоить ${price} кредитов`);
-    break;
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-    case 'australia':
-    price = 170
-    result = (`Доставка в ${country} будет стоить ${price} кредитов`);
-    break;
+console.log(checkForSpam('Get best sale offers now!')); // true
 
-    case 'india':
-    price = 80
-    result = (`Доставка в ${country} будет стоить ${price} кредитов`);
-    break; 
-
-    case 'jamaica':
-    price = 120
-    result = (`Доставка в ${country} будет стоить ${price} кредитов`);
-    break; 
-
-    default:
-        alert(result);
-}
-console.log (result);
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true

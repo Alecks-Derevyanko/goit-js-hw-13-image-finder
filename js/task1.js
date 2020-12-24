@@ -1,14 +1,9 @@
-const name = '"Генератор защитного поля"';
-let price = 1000;
+const logItems = function(array) {
+    for (let i = 0; i < array.length; i += 1) {
+        let message = `${i + 1} - ${array[i]}`;
+        console.log(message);
+    }
+}
+logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
 
-
-const message = `Выбран ${name}, цена за штуку ${price} кредитов`;
-console.log(message);
-price= 2000 ;
-const newPriceMessage = `Выбран ${name}, цена за штуку ${price} кредитов`;
-console.log(newPriceMessage);
-
-
-//  console.log(name);
-//  const wantRenew= confirm('want?');
-//  console.log(wantRenew);
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);

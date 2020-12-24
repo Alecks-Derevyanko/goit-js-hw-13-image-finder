@@ -1,19 +1,26 @@
-let credits = 23580;
-const pricePerDroid = 3000; 
-let quantity = prompt ('сколько дроидов вы хотите купить?');
-let totalPrice;
-let message = ('Отменено пользователем!');
+const formatString = function (string) {
 
-if(quantity === null){
-    message = ('Отменено пользователем!');
-}
-else if (credits <= totalPrice){
+    if (string.length > 40) {
+
+        let trimString = `${string.slice(0, 40)}...`;
+        return trimString;
+    }
+    else {
+        return string;
+    }
     
-    message = ('Недостаточно средств на счету!');
-} else {
-    let totalPrice = (quantity * pricePerDroid);
-    credits -= totalPrice;
-    message = (`Вы купили ${quantity} дроидов, на счету осталось ${credits} кредитов.`);
 }
 
-console.log (message);
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
+
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// вернется форматированная строка
+
+console.log(formatString('Curabitur ligula sapien.'));
+// вернется оригинальная строка
+
+console.log(
+  formatString(
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',));
+// вернется форматированная строка
