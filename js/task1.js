@@ -1,9 +1,18 @@
-const logItems = function(array) {
-    for (let i = 0; i < array.length; i += 1) {
-        let message = `${i + 1} - ${array[i]}`;
-        console.log(message);
-    }
-}
-logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
-
-logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+const user = {
+    name: 'Mango',
+    age: 20,
+    hobby: 'html',
+    premium: true,
+  };
+  
+  user.mood = 'happy';
+  user.hobby = 'skydiving';
+  user.premium = false;
+  
+  const keys = Object.keys(user);
+  
+  for (const key of keys) {
+  
+      console.log(`${key}: ${user[key]}`); 
+      
+  }
