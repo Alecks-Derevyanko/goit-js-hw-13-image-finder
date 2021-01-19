@@ -1,42 +1,7 @@
-class Storage {
-    constructor(items) {
-      this.items = items;
-    }
-    
-    getItems() {
-      return this.items;
-    }
-  
-    addItem(item) {
-      this.items.push(item);
-         
-    }
-  
-      removeItem(item) {
-  
-      const index = this.items.indexOf(item);
-  
-      if (index !== -1) {
-        this.items.splice(index, 1);
-      }
-    }
-  
-  }
-  
-  const storage = new Storage([
-    'Нанитоиды',
-    'Пролонгер',
-    'Железные жупи',
-    'Антигравитатор',
-  ]);
-  
-  const items = storage.getItems();
-  console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
-  
-  storage.addItem('Дроид');
-  console.table(storage.getItems()); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
-  
-  
-  storage.removeItem('Пролонгер');
-  console.table(storage.getItems()); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
-  
+// Получить массив имен пользователей по полу (поле gender).
+
+import users from "./users.js"
+
+const getUsersWithGender = (users, gender) => users.filter(user => user.gender === gender).map(user => user.name);
+
+console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]

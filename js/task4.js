@@ -1,32 +1,7 @@
-class StringBuilder {
-    constructor(value) {
-        this._value = value;  
-    }
+// Получить массив только неактивных пользователей (поле isActive).
 
-    get value() {
-        return this._value
-    }
-  
-   append(str) {
-    this._value += str;
-  }
+import users from "./users.js"
 
-  prepend(str) {
-    this._value = str + this._value;
-  }
+const getInactiveUsers = users => users.filter(user => user.isActive === false);
 
-  pad(str) {
-    this._value = str + this.value + str;
-  }
-}
-
-const builder = new StringBuilder('.');
-
-builder.append('^');
-console.log(builder.value);
-
-builder.prepend('^');
-console.log(builder.value);
-
-builder.pad('=');
-console.log(builder.value);
+console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
