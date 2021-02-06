@@ -1,7 +1,16 @@
-// Получить массив только неактивных пользователей (поле isActive).
+const decrementRef = document.querySelector("[data-action='decrement']");
+const incrementRef = document.querySelector("[data-action='increment']");
+const valueRef = document.querySelector('#value');
 
-import users from "./users.js"
+let counterValue = 0;
+const decrement = () => {
+  counterValue -= 1;
+  valueRef.textContent = counterValue;
+};
+const increment = () => {
+  counterValue += 1;
+  valueRef.textContent = counterValue;
+};
 
-const getInactiveUsers = users => users.filter(user => user.isActive === false);
-
-console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+decrementRef.addEventListener('click', decrement);
+incrementRef.addEventListener('click', increment);

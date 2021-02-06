@@ -1,6 +1,19 @@
-// Получить массив объектов пользователей по цвету глаз (поле eyeColor).
-import users from "./users.js"
-
-const getUsersWithEyeColor = (users, color) => users.filter(user => user.eyeColor === color);
-
-console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+const ingredients = [
+    'Картошка',
+    'Грибы',
+    'Чеснок',
+    'Помидоры',
+    'Зелень',
+    'Приправы',
+  ];
+  
+  const ingredientsRef = document.querySelector('#ingredients');
+  
+  const liItem = ingredients.map(ingridient => {
+      const liRef = document.createElement('li');
+      liRef.textContent = `${ingridient}`;
+      return liRef;
+     
+  });
+  
+  ingredientsRef.append(...liItem);

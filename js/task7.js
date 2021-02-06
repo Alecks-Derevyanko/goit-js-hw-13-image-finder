@@ -1,7 +1,7 @@
-// Получить общую сумму баланса (поле balance) всех пользователей.
+const rangeRef = document.querySelector('#font-size-control');
+const spanRef = document.querySelector('#text');
 
-import users from "./users.js"
-
-const calculateTotalBalance = users => users.reduce((acc, user) => acc + user.balance, 0);
-
-console.log(calculateTotalBalance(users)); // 20916
+rangeRef.addEventListener('input', () => {
+  const textSize = rangeRef.value;
+  spanRef.style.fontSize = `${textSize}px`;
+});

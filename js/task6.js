@@ -1,10 +1,15 @@
-import users from "./users.js"
+const validationInputRef = document.querySelector('#validation-input');
+const dataLength = Number(validationInputRef.dataset.length);
 
-// Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
+function validationInput() {
+  if (validationInputRef.value.length === dataLength) {
+    validationInputRef.classList.add('valid');
+    validationInputRef.classList.remove('invalid');
+  }
+  else {
+    validationInputRef.classList.add('invalid');
+    validationInputRef.classList.remove('valid');
+  }
+}
 
-const getUsersWithAge = (users, min, max) => users.filter(user => user.age < max && user.age > min);
-
-console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
-
-console.log(getUsersWithAge(users, 30, 40));
-// [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
+validationInputRef.addEventListener('blur', validationInput);

@@ -1,8 +1,12 @@
-// Получить массив имен всех пользователей (поле name).
+const categoriesRef = document.querySelector("#categories");
 
-import users from "./users.js"
+const allNumbersCategories = categoriesRef.children.length;
 
-const getUserNames = users => users.map(user => user.name);
+console.log(`В списке ${allNumbersCategories} категории.`);
 
-console.log(getUserNames(users));
-// [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
+const itemRefAll = document.querySelectorAll(".item")
+itemRefAll.forEach(item => {
+    
+    console.log(`Категория: ${item.querySelector('h2').textContent}`)
+    console.log(`Количество элементов: ${item.querySelector('ul').children.length}`)
+});
