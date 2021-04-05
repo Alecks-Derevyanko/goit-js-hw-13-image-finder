@@ -12,13 +12,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
-    },
+  },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
-    "license": "MIT",
+  "license": "MIT",
   "bugs": {
     "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
-    },
+  },
   "homepage": "https://Alecks-Derevyanko.github.io/goit-js-hw-13-image-finder/",
   "devDependencies": {
     "@babel/core": "^7.13.10",
